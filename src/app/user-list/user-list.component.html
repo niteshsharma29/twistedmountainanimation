@@ -1,0 +1,20 @@
+<div class="container my-4">
+  <h2 class="text-center">User List</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let header of tableHeaders">{{ header | titlecase }}</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <!-- Dynamic Table Data -->
+        <td *ngFor="let header of tableHeaders" contenteditable="true" (blur)="updateUser(user, header, $event)">
+          {{ user[header] }}
+        </td>
+        <td class="cursor-pointer" (click)="navigateToDetails(user.id)">Details</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

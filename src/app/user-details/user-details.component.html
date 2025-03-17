@@ -1,0 +1,17 @@
+<div class="container my-4">
+  <h3 class="text-center">User Details</h3>
+  <div *ngIf="user">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.name }}</h5>
+        <p class="card-text"><strong>Language:</strong> {{ user.language }}</p>
+        <p class="card-text"><strong>Bio:</strong> {{ user.bio }}</p>
+        <p class="card-text"><strong>Version:</strong> {{ user.version }}</p>
+      </div>
+    </div>
+    <a class="btn btn-primary mt-3" routerLink="/">Back to User List</a>
+  </div>
+  <div *ngIf="!user" class="alert alert-warning text-center">
+    <p>No user details found.</p>
+  </div>
+</div>
